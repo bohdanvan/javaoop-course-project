@@ -18,8 +18,7 @@ public enum Genre {
     ROMANCE,
     SCI_FI,
     THRILLER,
-    WAR
-    ;
+    WAR;
 
     public static boolean isGenre(String s) {
         for (Genre genre : Genre.values()) {
