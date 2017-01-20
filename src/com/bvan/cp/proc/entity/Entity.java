@@ -1,4 +1,4 @@
-package com.bvan.cp.entity;
+package com.bvan.cp.proc.entity;
 
 /**
  * @author bvanchuhov

@@ -1,6 +1,6 @@
-package com.bvan.cp.filtering;
+package com.bvan.cp.proc.filtering;
 
-import com.bvan.cp.entity.Film;
+import com.bvan.cp.proc.entity.Film;
 
 /**
  * @author bvanchuhov

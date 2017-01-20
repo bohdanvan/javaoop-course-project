@@ -1,4 +1,4 @@
-package com.bvan.cp.common;
+package com.bvan.cp.proc.common;
 
 /**
  * @author bvanchuhov

@@ -1,4 +1,4 @@
-package com.bvan.cp.sorting;
+package com.bvan.cp.proc.sorting;
 
 import java.util.Comparator;
 

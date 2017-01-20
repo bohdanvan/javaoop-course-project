@@ -1,19 +1,19 @@
-package com.bvan.cp.runner;
+package com.bvan.cp.proc.runner;
 
-import com.bvan.cp.entity.Film;
+import com.bvan.cp.proc.entity.Film;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.bvan.cp.common.CommonUtils.printList;
-import static com.bvan.cp.entity.Genre.*;
-import static com.bvan.cp.filtering.CommonPredicates.allOf;
-import static com.bvan.cp.filtering.FilmPredicates.containsInName;
-import static com.bvan.cp.filtering.FilmPredicates.withReleaseYearBetween;
-import static com.bvan.cp.filtering.Filter.filter;
-import static com.bvan.cp.sorting.CommonComparators.multiCriterion;
-import static com.bvan.cp.sorting.FilmComparators.byName;
-import static com.bvan.cp.sorting.FilmComparators.byReleaseYear;
+import static com.bvan.cp.proc.common.CommonUtils.printList;
+import static com.bvan.cp.proc.entity.Genre.*;
+import static com.bvan.cp.proc.filtering.CommonPredicates.allOf;
+import static com.bvan.cp.proc.filtering.FilmPredicates.containsInName;
+import static com.bvan.cp.proc.filtering.FilmPredicates.withReleaseYearBetween;
+import static com.bvan.cp.proc.filtering.Filter.filter;
+import static com.bvan.cp.proc.sorting.CommonComparators.multiCriterion;
+import static com.bvan.cp.proc.sorting.FilmComparators.byName;
+import static com.bvan.cp.proc.sorting.FilmComparators.byReleaseYear;
 import static java.util.Arrays.asList;
 import static java.util.Collections.reverseOrder;
 import static java.util.Collections.sort;

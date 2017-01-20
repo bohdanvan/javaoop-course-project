@@ -1,7 +1,7 @@
-package com.bvan.cp.io;
+package com.bvan.cp.proc.io;
 
-import com.bvan.cp.entity.Film;
-import com.bvan.cp.entity.Genre;
+import com.bvan.cp.proc.entity.Film;
+import com.bvan.cp.proc.entity.Genre;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static com.bvan.cp.io.Validator.isInt;
-import static com.bvan.cp.io.Validator.isReleaseYear;
+import static com.bvan.cp.proc.io.Validator.isInt;
+import static com.bvan.cp.proc.io.Validator.isReleaseYear;
 
 /**
  * @author bvanchuhov

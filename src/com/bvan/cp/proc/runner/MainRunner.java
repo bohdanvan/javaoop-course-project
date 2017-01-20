@@ -1,20 +1,20 @@
-package com.bvan.cp.runner;
+package com.bvan.cp.proc.runner;
 
-import com.bvan.cp.entity.Film;
-import com.bvan.cp.io.FilmIOUtils;
-import com.bvan.cp.io.IllegalFormatException;
+import com.bvan.cp.proc.entity.Film;
+import com.bvan.cp.proc.io.FilmIOUtils;
+import com.bvan.cp.proc.io.IllegalFormatException;
 
 import java.io.IOException;
 import java.util.List;
 
-import static com.bvan.cp.common.CommonUtils.printList;
-import static com.bvan.cp.filtering.CommonPredicates.allOf;
-import static com.bvan.cp.filtering.FilmPredicates.containsInName;
-import static com.bvan.cp.filtering.FilmPredicates.withReleaseYearBetween;
-import static com.bvan.cp.filtering.Filter.filter;
-import static com.bvan.cp.sorting.CommonComparators.multiCriterion;
-import static com.bvan.cp.sorting.FilmComparators.byName;
-import static com.bvan.cp.sorting.FilmComparators.byReleaseYear;
+import static com.bvan.cp.proc.common.CommonUtils.printList;
+import static com.bvan.cp.proc.filtering.CommonPredicates.allOf;
+import static com.bvan.cp.proc.filtering.FilmPredicates.containsInName;
+import static com.bvan.cp.proc.filtering.FilmPredicates.withReleaseYearBetween;
+import static com.bvan.cp.proc.filtering.Filter.filter;
+import static com.bvan.cp.proc.sorting.CommonComparators.multiCriterion;
+import static com.bvan.cp.proc.sorting.FilmComparators.byName;
+import static com.bvan.cp.proc.sorting.FilmComparators.byReleaseYear;
 import static java.util.Collections.reverseOrder;
 import static java.util.Collections.sort;
 
@@ -29,8 +29,14 @@ public class MainRunner {
     public static void main(String[] args) {
         List<Film> films = readFilmsFromFile(INPUT_TEXT_FILE);
 
-        films = filter(films, allOf(containsInName("a"), withReleaseYearBetween(2000, 2014)));
-        sort(films, multiCriterion(reverseOrder(byReleaseYear()), byName()));
+        films = filter(films, allOf(
+                containsInName("a"),
+                withReleaseYearBetween(2000, 2014)
+        ));
+        sort(films, multiCriterion(
+                        reverseOrder(byReleaseYear()),
+                        byName())
+        );
 
         printList(films);
         writeFilmsIntoBinFile(films, OUTPUT_BIN_FILE);

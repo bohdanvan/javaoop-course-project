@@ -1,6 +1,6 @@
-package com.bvan.cp.sorting;
+package com.bvan.cp.proc.sorting;
 
-import com.bvan.cp.entity.Film;
+import com.bvan.cp.proc.entity.Film;
 
 import java.util.Comparator;
 

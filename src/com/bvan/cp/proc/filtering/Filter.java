@@ -1,4 +1,4 @@
-package com.bvan.cp.filtering;
+package com.bvan.cp.proc.filtering;
 
 import java.util.ArrayList;
 import java.util.List;

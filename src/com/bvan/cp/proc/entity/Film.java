@@ -1,6 +1,6 @@
-package com.bvan.cp.entity;
+package com.bvan.cp.proc.entity;
 
-import com.bvan.cp.common.StringJoiner;
+import com.bvan.cp.proc.common.StringJoiner;
 
 import java.io.Serializable;
 import java.util.*;

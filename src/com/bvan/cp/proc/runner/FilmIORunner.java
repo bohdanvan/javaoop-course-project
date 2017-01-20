@@ -1,13 +1,13 @@
-package com.bvan.cp.runner;
+package com.bvan.cp.proc.runner;
 
-import com.bvan.cp.entity.Film;
-import com.bvan.cp.io.IllegalFormatException;
+import com.bvan.cp.proc.entity.Film;
+import com.bvan.cp.proc.io.IllegalFormatException;
 
 import java.io.IOException;
 import java.util.List;
 
-import static com.bvan.cp.io.FilmIOUtils.readFilmsFromFile;
-import static com.bvan.cp.io.FilmIOUtils.writeFilmsIntoBinFile;
+import static com.bvan.cp.proc.io.FilmIOUtils.readFilmsFromFile;
+import static com.bvan.cp.proc.io.FilmIOUtils.writeFilmsIntoBinFile;
 
 /**
  * @author bvanchuhov
