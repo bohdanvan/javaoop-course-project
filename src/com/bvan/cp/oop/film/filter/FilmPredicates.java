@@ -1,5 +1,6 @@
-package com.bvan.cp.oop.film;
+package com.bvan.cp.oop.film.filter;
 
+import com.bvan.cp.oop.film.Film;
 import com.bvan.cp.oop.filter.Predicate;
 
 /**

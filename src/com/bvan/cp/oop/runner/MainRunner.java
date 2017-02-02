@@ -6,10 +6,10 @@ import com.bvan.cp.oop.io.IllegalFormatException;
 
 import java.io.IOException;
 
-import static com.bvan.cp.oop.FilmComparators.byName;
-import static com.bvan.cp.oop.FilmComparators.byReleaseYear;
-import static com.bvan.cp.oop.film.FilmPredicates.containsInName;
-import static com.bvan.cp.oop.film.FilmPredicates.withReleaseYearBetween;
+import static com.bvan.cp.oop.film.sorting.FilmComparators.byName;
+import static com.bvan.cp.oop.film.sorting.FilmComparators.byReleaseYear;
+import static com.bvan.cp.oop.film.filter.FilmPredicates.containsInName;
+import static com.bvan.cp.oop.film.filter.FilmPredicates.withReleaseYearBetween;
 import static com.bvan.cp.oop.filter.AndPredicate.allOf;
 import static com.bvan.cp.oop.sorting.CompositeComparator.multiCriterion;
 import static java.util.Collections.reverseOrder;

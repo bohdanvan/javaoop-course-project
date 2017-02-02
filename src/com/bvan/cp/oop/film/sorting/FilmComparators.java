@@ -1,4 +1,4 @@
-package com.bvan.cp.oop;
+package com.bvan.cp.oop.film.sorting;
 
 import com.bvan.cp.oop.film.Film;
 import java.util.Comparator;

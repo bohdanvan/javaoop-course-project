@@ -3,10 +3,10 @@ package com.bvan.cp.oop.runner;
 import com.bvan.cp.oop.film.Film;
 import com.bvan.cp.oop.film.Films;
 
-import static com.bvan.cp.oop.FilmComparators.byName;
-import static com.bvan.cp.oop.FilmComparators.byReleaseYear;
-import static com.bvan.cp.oop.film.FilmPredicates.containsInName;
-import static com.bvan.cp.oop.film.FilmPredicates.withReleaseYearBetween;
+import static com.bvan.cp.oop.film.sorting.FilmComparators.byName;
+import static com.bvan.cp.oop.film.sorting.FilmComparators.byReleaseYear;
+import static com.bvan.cp.oop.film.filter.FilmPredicates.containsInName;
+import static com.bvan.cp.oop.film.filter.FilmPredicates.withReleaseYearBetween;
 import static com.bvan.cp.oop.film.Genre.*;
 import static com.bvan.cp.oop.filter.AndPredicate.allOf;
 import static com.bvan.cp.oop.sorting.CompositeComparator.multiCriterion;
