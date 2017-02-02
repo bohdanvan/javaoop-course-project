@@ -1,6 +1,6 @@
 package com.bvan.cp.proc.entity;
 
-import com.bvan.cp.proc.common.StringJoiner;
+import com.bvan.cp.common.Joiner;
 
 import java.io.Serializable;
 import java.util.*;
@@ -10,7 +10,7 @@ import java.util.*;
  */
 public final class Film implements Entity, Serializable {
 
-    private static final long serialVersionUID = 1901844035306848617L;
+    private static final long serialVersionUID = 1L;
 
     private String name;
     private int releaseYear;
@@ -70,7 +70,7 @@ public final class Film implements Entity, Serializable {
 
     @Override
     public String toOutputString(String delimiter) {
-        return new StringJoiner(delimiter).join(name, releaseYear, new StringJoiner(", ").join(genres.toArray()));
+        return new Joiner(delimiter).join(name, releaseYear, new Joiner(", ").join(genres.toArray()));
     }
 
     @Override
