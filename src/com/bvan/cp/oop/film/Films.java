@@ -10,6 +10,8 @@ import java.util.*;
  */
 public class Films implements Iterable<Film>, Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private final List<Film> films = new ArrayList<>();
 
     public void add(Film film) {

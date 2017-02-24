@@ -82,7 +82,7 @@ public class FilmIOUtils {
         }
     }
 
-    // Input from binary file
+    // Output into binary file
 
     public static void writeFilmsIntoBinFile(String fileName, List<Film> films) throws IOException {
         try (ObjectOutput objectOutput = new ObjectOutputStream(new FileOutputStream(fileName))) {
@@ -90,7 +90,7 @@ public class FilmIOUtils {
         }
     }
 
-    // Output into binary file
+    // Input from binary file
 
     /**
      * @throws IOException
