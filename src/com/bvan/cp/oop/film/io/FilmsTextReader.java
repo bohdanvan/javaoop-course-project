@@ -28,7 +28,7 @@ public class FilmsTextReader implements ObjectReader<Films> {
     }
 
     @Override
-    public Films read() throws IOException, IllegalFormatException {
+    public Films read() throws IOException {
         Films films = new Films();
 
         String line;

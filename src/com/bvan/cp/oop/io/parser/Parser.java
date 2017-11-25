@@ -6,5 +6,8 @@ import com.bvan.cp.oop.io.IllegalFormatException;
  * @author bvanchuhov
  */
 public interface Parser<T> {
-    T parse(String s) throws IllegalFormatException;
+    /**
+     * @throws IllegalFormatException
+     */
+    T parse(String s);
 }

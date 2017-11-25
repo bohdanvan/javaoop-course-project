@@ -24,7 +24,7 @@ public class ListDsvParser<T> implements Parser<List<T>> {
     }
 
     @Override
-    public List<T> parse(String s) throws IllegalFormatException {
+    public List<T> parse(String s) {
         String[] tokens = s.split(delimiter);
         List<T> res = new ArrayList<>(tokens.length);
 

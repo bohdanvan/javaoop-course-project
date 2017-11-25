@@ -29,7 +29,7 @@ public class FilmWithIdParser implements Parser<Film> {
     }
 
     @Override
-    public Film parse(String s) throws IllegalFormatException {
+    public Film parse(String s) {
         int firstDelimiterIndex = s.indexOf(valuesDelimiter);
         if (firstDelimiterIndex < 0 || firstDelimiterIndex == s.length() - 1) {
             throw new IllegalFormatException("some values are missed: " + s);

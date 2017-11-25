@@ -31,7 +31,7 @@ public class FilmParser implements Parser<Film> {
     }
 
     @Override
-    public Film parse(String s) throws IllegalFormatException {
+    public Film parse(String s) {
         String[] tokens = s.split(valuesDelimiter);
         if (tokens.length < 3) {
             throw new IllegalArgumentException("some values are missed: " + s);

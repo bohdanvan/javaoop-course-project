@@ -3,7 +3,7 @@ package com.bvan.cp.oop.io;
 /**
  * @author bvanchuhov
  */
-public class IllegalFormatException extends Exception {
+public class IllegalFormatException extends RuntimeException {
 
     public IllegalFormatException(String message) {
         super(message);

@@ -51,10 +51,13 @@ public class FilmIOUtils {
 
     /**
      * @throws IOException
+     * @throws FileNotFoundException
      * @throws IllegalFormatException
      */
     public static Film readFilmFromFile(String fileName) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader reader = new BufferedReader(
+                new FileReader(fileName))
+        ) {
             return readFilm(reader);
         }
     }
@@ -63,29 +66,55 @@ public class FilmIOUtils {
      * @throws IOException
      * @throws IllegalFormatException
      */
-    public static Film readFilm(BufferedReader reader) throws IOException {
+    private static Film readFilm(BufferedReader reader) throws IOException {
         String line = reader.readLine();
         return parseFilm(line);
     }
 
     // Output into text file
 
-    public static void writeFilmsIntoFile(String fileName, List<Film> films) throws FileNotFoundException {
-        try (PrintWriter writer = new PrintWriter(new File(fileName))) {
+    /**
+     * Do not use PrintWriter. Use Writer instead.
+     * @throws IOException
+     */
+    @Deprecated
+    public static void writeFilmsIntoFileWithPrintWriter(String fileName, List<Film> films) throws IOException {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
+            for (Film film : films) {
+                String s = film.toOutputString("|");
+                writer.println(s);
+            }
+        }
+    }
+
+    /**
+     * @throws IOException
+     */
+    public static void writeFilmsIntoFile(String fileName, List<Film> films) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writeFilms(writer, films);
         }
     }
 
-    public static void writeFilms(PrintWriter writer, List<Film> films) {
+    /**
+     * @throws IOException
+     */
+    private static void writeFilms(BufferedWriter writer, List<Film> films) throws IOException {
         for (Film film : films) {
-            writer.println(film.toOutputString(CSV_DELIMITER));
+            writer.write(film.toOutputString(CSV_DELIMITER));
+            writer.newLine();
         }
     }
 
     // Output into binary file
 
+    /**
+     * @throws IOException
+     */
     public static void writeFilmsIntoBinFile(String fileName, List<Film> films) throws IOException {
-        try (ObjectOutput objectOutput = new ObjectOutputStream(new FileOutputStream(fileName))) {
+        try (ObjectOutput objectOutput = new ObjectOutputStream(
+                new FileOutputStream(fileName))
+        ) {
             objectOutput.writeObject(films);
         }
     }
@@ -97,9 +126,11 @@ public class FilmIOUtils {
      * @throws IllegalFormatException
      */
     public static List<Film> readFilmsFromBinFile(String fileName) throws IOException {
-        try (ObjectInput objectInput = new ObjectInputStream(new FileInputStream(fileName))) {
+        try (ObjectInput objectInput = new ObjectInputStream(
+                new FileInputStream(fileName))
+        ) {
             return (List<Film>)objectInput.readObject();
-        } catch (ClassNotFoundException | ClassCastException e) {
+        } catch (ClassNotFoundException | ClassCastException | InvalidClassException e) {
             throw new IllegalFormatException("Binary file is corrupted", e);
         }
     }
@@ -109,7 +140,7 @@ public class FilmIOUtils {
     /**
      * @throws IllegalFormatException
      */
-    public static Film parseFilm(String line) {
+    private static Film parseFilm(String line) {
         String[] tokens = line.split(CSV_DELIMITER);
 
         if (tokens.length < 3) {

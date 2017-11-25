@@ -25,7 +25,7 @@ public class FilmsBinReader implements ObjectReader<Films> {
     }
 
     @Override
-    public Films read() throws IOException, IllegalFormatException {
+    public Films read() throws IOException {
         try {
             return (Films) objectInput.readObject();
         } catch (ClassNotFoundException e) {

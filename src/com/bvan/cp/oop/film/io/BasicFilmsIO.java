@@ -15,13 +15,20 @@ public class BasicFilmsIO {
 
     private BasicFilmsIO() {}
 
-    public static Films readFromTextFile(String fileName) throws IOException, IllegalFormatException {
+    /**
+     * @throws IOException
+     * @throws IllegalFormatException
+     */
+    public static Films readFromTextFile(String fileName) throws IOException {
         FilmParser filmParser = new FilmParser(";", ",");
         try (ObjectReader<Films> filmsReader = new FilmsTextReader(new FileReader(fileName), filmParser)) {
             return filmsReader.read();
         }
     }
 
+    /**
+     * @throws IOException
+     */
     public static void writeIntoTextFile(String fileName, Films films) throws IOException {
         FilmStringConverter filmConverter = new FilmStringConverter(";", ",");
         try (ObjectWriter<Films> filmsWriter = new FilmsTextWriter(new FileWriter(fileName), filmConverter)) {
@@ -29,13 +36,20 @@ public class BasicFilmsIO {
         }
     }
 
+    /**
+     * @throws IOException
+     */
     public static void writeIntoBinFile(String fileName, Films films) throws IOException {
         try (ObjectWriter<Films> filmsWriter = new FilmsBinWriter(new FileOutputStream(fileName))) {
             filmsWriter.write(films);
         }
     }
 
-    public static Films readFromBinFile(String fileName) throws IOException, IllegalFormatException {
+    /**
+     * @throws IOException
+     * @throws IllegalFormatException
+     */
+    public static Films readFromBinFile(String fileName) throws IOException {
         try (ObjectReader<Films> filmsReader = new FilmsBinReader(new FileInputStream(fileName))) {
             return filmsReader.read();
         }

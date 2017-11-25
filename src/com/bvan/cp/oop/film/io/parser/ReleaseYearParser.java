@@ -10,7 +10,7 @@ import com.bvan.cp.oop.io.parser.Parser;
 public class ReleaseYearParser implements Parser<Integer> {
 
     @Override
-    public Integer parse(String s) throws IllegalFormatException {
+    public Integer parse(String s) {
         int n = new IntParser().parse(s);
         if (!isReleaseYear(n)) {
             throw new IllegalFormatException("illegal release year: " + s);

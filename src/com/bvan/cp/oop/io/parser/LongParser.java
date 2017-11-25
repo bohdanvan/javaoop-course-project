@@ -8,7 +8,7 @@ import com.bvan.cp.oop.io.IllegalFormatException;
 public class LongParser implements Parser<Long> {
 
     @Override
-    public Long parse(String s) throws IllegalFormatException {
+    public Long parse(String s) {
         try {
             return Long.parseLong(s);
         } catch (NumberFormatException e) {

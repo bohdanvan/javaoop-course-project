@@ -8,7 +8,7 @@ import com.bvan.cp.oop.io.IllegalFormatException;
 public class IntParser implements Parser<Integer> {
 
     @Override
-    public Integer parse(String s) throws IllegalFormatException {
+    public Integer parse(String s) {
         try {
             return Integer.parseInt(s);
         } catch (NumberFormatException e) {

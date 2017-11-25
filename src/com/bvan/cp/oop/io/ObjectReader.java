@@ -7,5 +7,9 @@ import java.io.IOException;
  * @author bvanchuhov
  */
 public interface ObjectReader<T> extends Closeable {
-    T read() throws IOException, IllegalFormatException;
+    /**
+     * @throws IOException
+     * @throws IllegalFormatException
+     */
+    T read() throws IOException;
 }
