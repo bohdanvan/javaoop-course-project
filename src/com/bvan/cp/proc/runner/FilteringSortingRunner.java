@@ -26,7 +26,7 @@ public class FilteringSortingRunner {
     public static void main(String[] args) {
         List<Film> films = createFilms();
 
-        films = filter(films, allOf(containsInName("a"), withReleaseYearBetween(2000, 2014)));
+        films = filter(films, allOf(containsInName("H"), withReleaseYearBetween(2000, 2014)));
         sort(films, multiCriterion(reverseOrder(byReleaseYear()), byName()));
 
         printList(films);
